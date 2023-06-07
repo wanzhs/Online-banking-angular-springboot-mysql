@@ -1,21 +1,12 @@
 package com.hendisantika.onlinebanking.service.UserServiceImpl;
 
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
-import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
-import com.hendisantika.onlinebanking.entity.Recipient;
-import com.hendisantika.onlinebanking.entity.SavingsAccount;
-import com.hendisantika.onlinebanking.entity.SavingsTransaction;
-import com.hendisantika.onlinebanking.entity.User;
-import com.hendisantika.onlinebanking.repository.PrimaryAccountDao;
-import com.hendisantika.onlinebanking.repository.PrimaryTransactionDao;
-import com.hendisantika.onlinebanking.repository.RecipientDao;
-import com.hendisantika.onlinebanking.repository.SavingsAccountDao;
-import com.hendisantika.onlinebanking.repository.SavingsTransactionDao;
+import com.hendisantika.onlinebanking.entity.*;
+import com.hendisantika.onlinebanking.repository.*;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.Date;
@@ -35,22 +26,22 @@ import java.util.stream.Collectors;
 @Service
 public class TransactionServiceImpl implements TransactionService {
 
-    @Autowired
+    @Resource
     private UserService userService;
 
-    @Autowired
+    @Resource
     private PrimaryTransactionDao primaryTransactionDao;
 
-    @Autowired
+    @Resource
     private SavingsTransactionDao savingsTransactionDao;
 
-    @Autowired
+    @Resource
     private PrimaryAccountDao primaryAccountDao;
 
-    @Autowired
+    @Resource
     private SavingsAccountDao savingsAccountDao;
 
-    @Autowired
+    @Resource
     private RecipientDao recipientDao;
 
 

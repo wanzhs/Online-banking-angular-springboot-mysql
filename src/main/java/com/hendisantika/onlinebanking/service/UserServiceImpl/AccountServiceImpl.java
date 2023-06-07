@@ -1,18 +1,15 @@
 package com.hendisantika.onlinebanking.service.UserServiceImpl;
 
-import com.hendisantika.onlinebanking.entity.PrimaryAccount;
-import com.hendisantika.onlinebanking.entity.PrimaryTransaction;
-import com.hendisantika.onlinebanking.entity.SavingsAccount;
-import com.hendisantika.onlinebanking.entity.SavingsTransaction;
-import com.hendisantika.onlinebanking.entity.User;
+import com.hendisantika.onlinebanking.entity.*;
 import com.hendisantika.onlinebanking.repository.PrimaryAccountDao;
 import com.hendisantika.onlinebanking.repository.SavingsAccountDao;
 import com.hendisantika.onlinebanking.service.AccountService;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.Date;
@@ -32,16 +29,17 @@ public class AccountServiceImpl implements AccountService {
 
     private static int nextAccountNumber = 11223101;
 
-    @Autowired
+    @Resource
     private PrimaryAccountDao primaryAccountDao;
 
-    @Autowired
+    @Resource
     private SavingsAccountDao savingsAccountDao;
 
-    @Autowired
+    @Resource
+    @Lazy
     private UserService userService;
 
-    @Autowired
+    @Resource
     private TransactionService transactionService;
 
     public PrimaryAccount createPrimaryAccount() {

@@ -4,11 +4,12 @@ import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.repository.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,7 +26,7 @@ public class UserSecurityServiceImpl implements UserDetailsService {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserSecurityServiceImpl.class);
 
-    @Autowired
+    @Resource
     private UserDao userDao;
 
     @Override

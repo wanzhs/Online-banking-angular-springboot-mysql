@@ -3,9 +3,9 @@ package com.hendisantika.onlinebanking.service.UserServiceImpl;
 import com.hendisantika.onlinebanking.entity.Appointment;
 import com.hendisantika.onlinebanking.repository.AppointmentDao;
 import com.hendisantika.onlinebanking.service.AppointmentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -21,7 +21,7 @@ import java.util.List;
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
 
-    @Autowired
+    @Resource
     private AppointmentDao appointmentDao;
 
     public Appointment createAppointment(Appointment appointment) {

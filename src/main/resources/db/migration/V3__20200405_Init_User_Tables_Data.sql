@@ -27,7 +27,7 @@ CREATE TABLE user
 -- Dumping data for table user
 --
 
-LOCK TABLES USER WRITE;
+LOCK TABLES user WRITE;
 INSERT INTO user
 VALUES (1, 'uzumaki_naruto@konohagakure.co.jp', '', 'Uzumaki', 'Naruto',
         '$2a$12$DWCryEwHwbTYCegib92tk.VST.GG1i2WAqfaSwyMdxX0cl0eBeSve', '5551112345', 'User', 1, 1),
