@@ -5,14 +5,10 @@ import com.hendisantika.onlinebanking.entity.SavingsTransaction;
 import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -30,10 +26,10 @@ import java.util.List;
 @PreAuthorize("hasRole('ADMIN')")
 public class UserResource {
 
-    @Autowired
+    @Resource
     private UserService userService;
 
-    @Autowired
+    @Resource
     private TransactionService transactionService;
 
     @RequestMapping(value = "/user/all", method = RequestMethod.GET)

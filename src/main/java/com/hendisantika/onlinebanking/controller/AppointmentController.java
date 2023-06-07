@@ -4,13 +4,13 @@ import com.hendisantika.onlinebanking.entity.Appointment;
 import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.service.AppointmentService;
 import com.hendisantika.onlinebanking.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.annotation.Resource;
 import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,10 +30,10 @@ import java.util.Date;
 @RequestMapping("/appointment")
 public class AppointmentController {
 
-    @Autowired
+    @Resource
     private AppointmentService appointmentService;
 
-    @Autowired
+    @Resource
     private UserService userService;
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)

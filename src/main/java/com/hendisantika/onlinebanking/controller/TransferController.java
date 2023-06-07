@@ -6,7 +6,6 @@ import com.hendisantika.onlinebanking.entity.SavingsAccount;
 import com.hendisantika.onlinebanking.entity.User;
 import com.hendisantika.onlinebanking.service.TransactionService;
 import com.hendisantika.onlinebanking.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
 import java.security.Principal;
 import java.util.List;
 
@@ -32,10 +32,10 @@ import java.util.List;
 @RequestMapping("/transfer")
 public class TransferController {
 
-    @Autowired
+    @Resource
     private TransactionService transactionService;
 
-    @Autowired
+    @Resource
     private UserService userService;
 
     @RequestMapping(value = "/betweenAccounts", method = RequestMethod.GET)
